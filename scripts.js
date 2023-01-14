@@ -1,6 +1,7 @@
 
 
 var newGame = new Game();
+
 window.onload = function() {
     setTimeout(function(){document.body.style.opacity="100";},500);
     newGame.testWin();
@@ -64,11 +65,31 @@ difficultyButton.addEventListener("click", function() {
 
 });
 
+rockImage.addEventListener("click", function() {
+newGame.testWin();
+});
+
+paperImage.addEventListener("click", function() {
+    newGame.testWin();
+});
+
+scissorsImage.addEventListener("click", function() {
+    newGame.testWin();
+});
+
+boomImage.addEventListener("click", function() {
+    newGame.testWin();
+});
+
+handImage.addEventListener("click", function() {
+    newGame.testWin();
+});
+
 function revealObject(object) {
     if (object.classList.contains("hidden")) {
       object.classList.remove("hidden");
     } 
-  }
+}
 
 function hideObject(object) {
     object.classList.add("hidden");
