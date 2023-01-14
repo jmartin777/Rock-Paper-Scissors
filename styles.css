@@ -16,6 +16,7 @@
     margin: -10px auto;
     margin-right: 50px;
   }
+
   .game-background {
     height: 520px;
     width: 690px;
@@ -79,6 +80,7 @@
     height: 100px;
     width: 100px;
   }
+  
   .player2-icon{
     height: 100px;
     width: 100px;
