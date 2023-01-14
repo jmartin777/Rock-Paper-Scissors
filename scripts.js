@@ -1,6 +1,14 @@
-window.onload = function() {setTimeout(function(){document.body.style.opacity="100";},500);};
+
+
+var newGame = new Game();
+window.onload = function() {
+    setTimeout(function(){document.body.style.opacity="100";},500);
+    newGame.testWin();
+};
 
 var difficulty = 0 
+
+
 
 var difficultyButton = document.getElementById('difficulty-button')
 var classicButton = document.getElementById('classic-button') 
@@ -16,10 +24,8 @@ classicButton.addEventListener("click", function() {
     if (difficulty === 0) {
         revealObject(rockImage);
         revealObject(paperImage);
-        revealObject(scissorsImage);
-        
+        revealObject(scissorsImage);  
     } 
-  
     difficulty = 1;
     document.getElementById("instructor-tag").innerHTML = "Select your object. (Classic Mode)"
     hideObject(classicButton);
@@ -35,9 +41,7 @@ futureButton.addEventListener("click", function() {
         revealObject(scissorsImage);
         revealObject(paperImage);
         revealObject(rockImage);
-    
     } 
-
     difficulty = 2;
     document.getElementById("instructor-tag").innerHTML = "Select your object. (Future Mode)"
     hideObject(classicButton);
@@ -59,7 +63,6 @@ difficultyButton.addEventListener("click", function() {
     hideObject(rockImage);
 
 });
-
 
 function revealObject(object) {
     if (object.classList.contains("hidden")) {
