@@ -77,6 +77,7 @@ rockImage.addEventListener("click", function() {
         newGame.computerChoiceClassic();
     }
     newGame.testWinClassicMode();
+    newGame.delayRestart();
     console.log(newGame.player1.wins);
     console.log(newGame.player2.wins);
     
@@ -92,6 +93,7 @@ paperImage.addEventListener("click", function() {
         newGame.computerChoiceClassic();
     }
     newGame.testWinClassicMode();
+    newGame.delayRestart();
     console.log(newGame.player1.wins);
     console.log(newGame.player2.wins);
     
@@ -107,7 +109,7 @@ scissorsImage.addEventListener("click", function() {
         newGame.computerChoiceClassic();
     }
     newGame.testWinClassicMode()
-    newGame.computerChoiceClassic();
+    newGame.delayRestart();
     
 });
 // this gives the index position of player 1's choice of boom as a value of 4 within the address 0 of the board array.
