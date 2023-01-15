@@ -49,7 +49,7 @@ class Game {
     }
     
     testWinClassicMode() {
-        if (newGame.board[0] === newGame.board[1]) {
+        if (this.board[0] === this.board[1]) {
             console.log("Its a DRAW");
             document.getElementById("instructor-tag").innerHTML = "DRAW [!!]";
         } else {
@@ -61,6 +61,7 @@ class Game {
     // declares variable 'randomChoice' (functional scope) that randomixes and assigns it a number b/t 0 and 2
     // declares variable 'computerChoice' (functional scope) that assigns the value from the 'choices' array and index [randomChoice]
     // sets value of this.board[1] to the computerChoice variable to be accessed.
+
     computerChoiceClassic() {
     var choices = [1, 2, 3]; 
     var randomChoice =  Math.floor(Math.random() * 3);
@@ -68,32 +69,33 @@ class Game {
     this.board[1] = computerChoice;
     return computerChoice
     }
-        
-    resetBoard() {
-        this.board = [];
-    }
+    
+    // this function instantiates new class instances of player 1 and player 2 as objects through our Game Class constructor and returns default (new game).
+    // this.board is re assigned a empty. Data model updated
+    //DOM manipulated return to "Choose Game" menu.(difficulty = 0[newgame])
+    
+    resetGame() {
+        newGame = new Game()
+        difficulty = 0
+        newGame.player1.wins = 0;
+        newGame.player2.wins = 0;
+        revealObject(classicButton);
+        revealObject(futureButton);
+        hideObject(difficultyButton);
+        hideObject(boomImage);
+        hideObject(handImage);
+        hideObject(scissorsImage);
+        hideObject(paperImage);
+        hideObject(rockImage);
+      
 }
 
-      // FUTURE MODE
-        // 4 > 1 
-        // (boom beats rock)
-        // 4 > 3
-        // (boom beats scissors)
-        // 5 > 2 
-        // (hands beats paper)
-        // 5 > 4
-        // (hands beat boom)
-        // 3 > 5
-        // (scissors beats hand)
-        // 3 > 2
-        // (scissors beats paper)
-        // 2 > 1
-        // (paper beats rock)
-        // 2 > 4
-        // (paper beats boom)
-        // 1 > 3
-        // (rock beats scissors)
-        // 1 > 5
-        // (rock beats hand)
 
-   
+//this function is instantiating a new Game Class
+// Researched setTimeut() method which sets a delay to the resetGame function which marks a 'new round' after 20 seconds.
+
+delayRestart() {
+    newGame = new Game()
+    setTimeout(this.resetGame, 15000)
+    }
+}
