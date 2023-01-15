@@ -68,87 +68,84 @@ difficultyButton.addEventListener("click", function() {
     hideObject(rockImage);
 
 });
-// this gives the index position of player 1's choice of rock as a value of 1 within the address 0 of the board array.
-// this gives the index position of player 2's choice of rock as a value of 1 within the address 1 of the board array.
+// this gives the index position of player 1's choice of rock as a value of 1 within the index 0 of the board array.
+// this gives the index position of player 2's choice of rock as a value of 1 within the index 1 of the board array.
+// generates computers random choice and displays (1 second), after code block
 
 rockImage.addEventListener("click", function() {
     if (newGame.player1.turn === true) {
         newGame.board[0] = 1;
         newGame.player1.turn = false;
         newGame.player2.turn = true;
-        newGame.computerChoiceClassic();
+        newGame.displayComputerChoice();
     }
-    newGame.testWinClassicMode();
-    newGame.restart();
+    newGame.testWinMode()
     console.log(newGame.player1.wins);
     console.log(newGame.player2.wins);
     
 });
- // this gives the index position of player 1's choice of paper as a value of 2 within the address 0 of the board array.
-  // this gives the index position of player 2's choice of paper as a value of 2 within the address 1 of the board array.
+ // this gives the index position of player 1's choice of paper as a value of 2 within the index 0 of the board array.
+  // this gives the index position of player 2's choice of paper as a value of 2 within the index 1 of the board array.
 
 paperImage.addEventListener("click", function() {
     if (newGame.player1.turn === true) {
         newGame.board[0] = 2;
         newGame.player1.turn = false;
         newGame.player2.turn = true;
-        newGame.computerChoiceClassic();
+        newGame.displayComputerChoice();
     }
-    newGame.testWinClassicMode();
-    newGame.restart();
+    newGame.testWinMode()
     console.log(newGame.player1.wins);
     console.log(newGame.player2.wins);
     
 });
- // this gives the index position of player 1's choice of scissors as a value of 3 within the address 0 of the board array.
- // this gives the index position of player 2's choice of scissors as a value of 3 within the address 1 of the board array.
+ // this gives the index position of player 1's choice of scissors as a value of 3 within the index 0 of the board array.
+ // this gives the index position of player 2's choice of scissors as a value of 3 within the index 1 of the board array.
 
 scissorsImage.addEventListener("click", function() {
     if (newGame.player1.turn === true) {
         newGame.board[0] = 3;
         newGame.player1.turn = false;
         newGame.player2.turn = true;
-        newGame.computerChoiceClassic();
+        newGame.displayComputerChoice();
     }
-    newGame.testWinClassicMode()
-    newGame.restart();
+    newGame.testWinMode()
     console.log(newGame.player1.wins);
     console.log(newGame.player2.wins);
     
 });
-// this gives the index position of player 1's choice of boom as a value of 4 within the address 0 of the board array.
-// this gives the index position of player 2's choice of boom as a value of 4 within the address 1 of the board array.
+// this gives the index position of player 1's choice of boom as a value of 4 within the index 0 of the board array.
+// this gives the index position of player 2's choice of boom as a value of 4 within the index 1 of the board array.
 
 boomImage.addEventListener("click", function() {
     if (newGame.player1.turn === true) {
         newGame.board[0] = 4;
         newGame.player1.turn = false;
         newGame.player2.turn = true;
+        newGame.displayComputerChoice();
     }
     else if (newGame.player2.turn === true) {
-        newGame.board[1] = 4;
-        newGame.player1.turn = true;
-        newGame.player2.turn = false;
+        newGame.testWinMode();
+        console.log(newGame.player1.wins);
+        console.log(newGame.player2.wins);
     }
-    newGame.testDraw();
    
 });
- // this gives the index position of player 1's choice of hand as a value of 5 within the address 0 of the board array.
- // this gives the index position of player 2's choice of hand as a value of 5 within the address 1 of the board array.
+ // this gives the index position of player 1's choice of hand as a value of 5 within the index 0 of the board array.
+ // this gives the index position of player 2's choice of hand as a value of 5 within the index 1 of the board array.
 
 handImage.addEventListener("click", function() {
     if (newGame.player1.turn === true) {
         newGame.board[0] = 5;
         newGame.player1.turn = false;
         newGame.player2.turn = true;
+        newGame.displayComputerChoice();
     }
     else if (newGame.player2.turn === true) {
-        newGame.board[1] = 5;
-        newGame.player1.turn = true;
-        newGame.player2.turn = false;
+        newGame.testWinMode();
+        console.log(newGame.player1.wins);
+        console.log(newGame.player2.wins);
     }
-    newGame.testDraw();
-   
 });
 
 // Event Handelers
