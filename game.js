@@ -23,38 +23,54 @@ class Game {
     testWinClassic() {
         if(this.board[0] === 1 && this.board[1] === 3) {
             this.player1.wins++;
+        } else if (this.board[0] === 2 && this.board[1] === 1) {
+            this.player1.wins++;
+        } else if (this.board[0] === 3 && this.board[1] === 2) {
+            this.player1.wins++;
+        } else if (this.board[0] === 1 && this.board[1] === 2) {
+            this.player2.wins++;
+        } else if (this.board[0] === 2 && this.board[1] === 3) {
+            this.player2.wins++;
+        } else if (this.board[0] === 3 && this.board[1] === 1) {
+            this.player2.wins++;
+        }
+
+        //debugging logic : wins are not being updated in the data model
+        // solution : seperated the test testWinClassic function into two seperate 'if' statements 
+        // and created a function that restarts the turn and updates the model for wins to be updated
+
+        if(this.board[0] === 1 && this.board[1] === 3) {
             console.log(`${this.player1.name} wins!`);
             document.getElementById("instructor-tag").innerHTML = `${this.player1.name} wins!`;
         } else if (this.board[0] === 2 && this.board[1] === 1) {
-            this.player1.wins++;
             console.log(`${this.player1.name} wins!`);
             document.getElementById("instructor-tag").innerHTML = `${this.player1.name} wins!`;
         } else if (this.board[0] === 3 && this.board[1] === 2) {
-            this.player1.wins++;
             console.log(`${this.player1.name} wins!`);
             document.getElementById("instructor-tag").innerHTML = `${this.player1.name} wins!`;
         } else if (this.board[0] === 1 && this.board[1] === 2) {
-            this.player2.wins++;
             console.log(`${this.player2.name} wins!`);
             document.getElementById("instructor-tag").innerHTML = `${this.player2.name} wins!`;
         } else if (this.board[0] === 2 && this.board[1] === 3) {
-            this.player2.wins++;
             console.log(`${this.player2.name} wins!`);
             document.getElementById("instructor-tag").innerHTML = `${this.player2.name} wins!`;
         } else if (this.board[0] === 3 && this.board[1] === 1) {
-            this.player2.wins++;
             console.log(`${this.player2.name} wins!`);
             document.getElementById("instructor-tag").innerHTML = `${this.player2.name} wins!`;
-        }
+            
+
     }
+}
     
     testWinClassicMode() {
+        this.testWinClassic()
         if (this.board[0] === this.board[1]) {
             console.log("Its a DRAW");
             document.getElementById("instructor-tag").innerHTML = "DRAW [!!]";
         } else {
-            this.testWinClassic()
+        this.computerChoiceClassic
         }
+        this.testWinClassic()
     }
     
     // declares variable 'choices' (functional scope) of computer choices (rock, paper, scissors)
@@ -90,12 +106,41 @@ class Game {
       
 }
 
+// function that resets the game board and the player turns (*debug logic yo update player1.wins and player2.wins)
+
+restart() {
+    this.board = [null, null];
+    this.player1.turn = true;
+    this.player2.turn = false;
+}
+
 
 //this function is instantiating a new Game Class
-// Researched setTimeut() method which sets a delay to the resetGame function which marks a 'new round' after 20 seconds.
+// Researched setTimeut() method which sets a delay to the resetGame function which marks a 'new round' after 10 seconds.
+// Inserted this function into Event Listeners for 'classic' and 'future' button to start a timer for the game. Then restarts the whole entire game calling the "resetGame function"
 
 delayRestart() {
-    newGame = new Game()
-    setTimeout(this.resetGame, 15000)
+    setTimeout(this.resetGame, 10000)
     }
 }
+ // FUTURE MODE
+        // 4 > 1 
+        // (boom beats rock)
+        // 4 > 3
+        // (boom beats scissors)
+        // 5 > 2 
+        // (hands beats paper)
+        // 5 > 4
+        // (hands beat boom)
+        // 3 > 5
+        // (scissors beats hand)
+        // 3 > 2
+        // (scissors beats paper)
+        // 2 > 1
+        // (paper beats rock)
+        // 2 > 4
+        // (paper beats boom)
+        // 1 > 3
+        // (rock beats scissors)
+        // 1 > 5
+        // (rock beats hand)
