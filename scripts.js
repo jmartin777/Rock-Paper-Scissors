@@ -75,6 +75,7 @@ difficultyButton.addEventListener("click", function() {
 rockImage.addEventListener("click", function() {
     if (newGame.player1.turn === true) {
         newGame.board[0] = 1;
+        newGame.board[1] = newGame.computerChoice()
         newGame.player1.turn = false;
         newGame.player2.turn = true;
         newGame.displayComputerChoice();
@@ -90,6 +91,7 @@ rockImage.addEventListener("click", function() {
 paperImage.addEventListener("click", function() {
     if (newGame.player1.turn === true) {
         newGame.board[0] = 2;
+        newGame.board[1] = newGame.computerChoice()
         newGame.player1.turn = false;
         newGame.player2.turn = true;
         newGame.displayComputerChoice();
@@ -105,13 +107,14 @@ paperImage.addEventListener("click", function() {
 scissorsImage.addEventListener("click", function() {
     if (newGame.player1.turn === true) {
         newGame.board[0] = 3;
+        newGame.board[1] = newGame.computerChoice()
         newGame.player1.turn = false;
         newGame.player2.turn = true;
         newGame.displayComputerChoice();
     }
-    newGame.testWinMode()
-    console.log(newGame.player1.wins);
-    console.log(newGame.player2.wins);
+        newGame.testWinMode()
+        console.log(newGame.player1.wins);
+        console.log(newGame.player2.wins);
     
 });
 // this gives the index position of player 1's choice of boom as a value of 4 within the index 0 of the board array.
@@ -120,15 +123,14 @@ scissorsImage.addEventListener("click", function() {
 boomImage.addEventListener("click", function() {
     if (newGame.player1.turn === true) {
         newGame.board[0] = 4;
+        newGame.board[1] = newGame.computerChoice()
         newGame.player1.turn = false;
         newGame.player2.turn = true;
         newGame.displayComputerChoice();
     }
-    else if (newGame.player2.turn === true) {
         newGame.testWinMode();
         console.log(newGame.player1.wins);
         console.log(newGame.player2.wins);
-    }
    
 });
  // this gives the index position of player 1's choice of hand as a value of 5 within the index 0 of the board array.
@@ -137,15 +139,14 @@ boomImage.addEventListener("click", function() {
 handImage.addEventListener("click", function() {
     if (newGame.player1.turn === true) {
         newGame.board[0] = 5;
+        newGame.board[1] = newGame.computerChoice()
         newGame.player1.turn = false;
         newGame.player2.turn = true;
         newGame.displayComputerChoice();
     }
-    else if (newGame.player2.turn === true) {
         newGame.testWinMode();
         console.log(newGame.player1.wins);
         console.log(newGame.player2.wins);
-    }
 });
 
 // Event Handelers
