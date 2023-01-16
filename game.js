@@ -126,18 +126,19 @@ class Game {
             console.log(`${this.player2.name} wins!`);
             document.getElementById("instructor-tag").innerHTML = `${this.player2.name} wins!`;
         }
+        
      }
 
     
     testWinMode() {
-        this.testWin()
         if (this.board[0] === this.board[1]) {
             console.log("Its a DRAW");
             document.getElementById("instructor-tag").innerHTML = "DRAW [!!]";
         } else {
-        this.computerChoiceClassic
+        this.computerChoice
         }
         this.testWin();
+        this.restart();
     };
     
     // this function instantiates new class instances of player 1 and player 2 as objects through our Game Class constructor and returns default (new game).
@@ -145,9 +146,9 @@ class Game {
     //DOM manipulated return to "Choose Game" menu.(difficulty = 0[newgame])
     
     resetGame() {
-        document.getElementById("instructor-tag").innerHTML = "Choose game."
         newGame = new Game()
         difficulty = 0
+        this.resetGameHtml();
         newGame.player1.wins = 0;
         newGame.player2.wins = 0;
         revealObject(classicButton);
@@ -175,7 +176,12 @@ restart() {
 // Inserted this function into Event Listeners for 'classic' and 'future' button to start a timer for the game. Then restarts the whole entire game calling the "resetGame"
 
 delayRestart() {
-    setTimeout(this.resetGame, 15000)
+    setTimeout(function() {
+        newGame = new Game();
+        newGame.resetGameHtml();
+        newGame.resetGame();
+
+    }, 15000)
     }
 
 //this restartRound function is setting a delay to the restart function and being used as a helper method inside the Displaycomputerchoice function after the cumputer choice  has been displayed
@@ -183,13 +189,21 @@ delayRestart() {
 
 restartRound() {
     setTimeout(() => {
-    this.restart();
-    document.getElementById("rock").classList.remove("hidden");
-    document.getElementById("paper").classList.remove("hidden");
-    document.getElementById("scissors").classList.remove("hidden");
-    document.getElementById("boom").classList.remove("hidden");
-    document.getElementById("hand").classList.remove("hidden");
+        if (difficulty === 1) {
+            document.getElementById("rock").classList.remove("hidden");
+            document.getElementById("paper").classList.remove("hidden");
+            document.getElementById("scissors").classList.remove("hidden");
+        } else if (difficulty === 2) {
+            document.getElementById("rock").classList.remove("hidden");
+            document.getElementById("paper").classList.remove("hidden");
+            document.getElementById("scissors").classList.remove("hidden");
+            document.getElementById("boom").classList.remove("hidden");
+            document.getElementById("hand").classList.remove("hidden");
+        }
+        this.restart();
+    
     }, 1000);
+    
 }
     // computerChoice Function-
     // declares variable 'choices' (functional scope) of computer choices (rock, paper, scissors, boom, hand)
@@ -220,6 +234,7 @@ computerChoice() {
         document.getElementById("boom").classList.add("hidden");
         document.getElementById("hand").classList.add("hidden");
 
+
     if (computerChoice === 1 && newGame.difficulty === 1) {
         document.getElementById("rock").classList.remove("hidden");
         } else if (computerChoice === 2) {
@@ -228,18 +243,25 @@ computerChoice() {
         document.getElementById("scissors").classList.remove("hidden");
         } 
 
-    if (computerChoice === 1 && newGame.difficulty === 2) {
+    if (computerChoice === 1 && newGame.difficulty === 2 ) {
         document.getElementById("rock").classList.remove("hidden");
-        } else if (computerChoice === 2) {
+        } else if (computerChoice === 2 && newGame.difficulty === 2) {
         document.getElementById("paper").classList.remove("hidden");
-        } else if (computerChoice === 3) {
+        } else if (computerChoice === 3 && newGame.difficulty === 2) {
         document.getElementById("scissors").classList.remove("hidden");
-        } else if (computerChoice === 4) {
+        } else if (computerChoice === 4 && newGame.difficulty === 2) {
         document.getElementById("boom").classList.remove("hidden");
-        } else if (computerChoice === 5) {
+        } else if (computerChoice === 5 && newGame.difficulty === 2) {
         document.getElementById("hand").classList.remove("hidden");
         }
     this.restartRound()
     }
+
+    resetGameHtml() {
+        document.getElementById("instructor-tag").innerHTML = "Choose game."
+    }
+    
   }
+
+
 
