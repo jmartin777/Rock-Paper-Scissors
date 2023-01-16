@@ -21,7 +21,10 @@ var rockImage = document.getElementById("rock");
 var paperImage = document.getElementById("paper");
 var scissorsImage = document.getElementById("scissors");
 var boomImage = document.getElementById("boom");
-var handImage = document.getElementById("hand")
+var handImage = document.getElementById("hand");
+var player1Wins = document.getElementById("player-data-1");
+var player2Wins = document.getElementById("player-data-2");
+
 
 // Event Listeners
 
