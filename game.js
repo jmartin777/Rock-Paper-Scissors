@@ -67,9 +67,6 @@ class Game {
         } else if (this.board[0] === 1 && this.board[1] === 4) {
             this.player2.wins++;
         }
-        //debugging logic : wins are not being updated in the data model
-        // solution : seperated the test testWinClassic function into two seperate 'if' statements 
-        // and created a function that restarts the turn and updates the model for wins to be updated
 
         if(this.board[0] === 1 && this.board[1] === 3) {
             console.log(`${this.player1.name} wins!`);
@@ -126,8 +123,8 @@ class Game {
             console.log(`${this.player2.name} wins!`);
             document.getElementById("instructor-tag").innerHTML = `${this.player2.name} wins!`;
         }
-        
-     }
+        this.updateWins
+    }
 
     
     testWinMode() {
@@ -138,6 +135,7 @@ class Game {
         this.computerChoice
         }
         this.testWin();
+        this.updateWins();
         this.restart();
     };
     
@@ -148,6 +146,7 @@ class Game {
     resetGame() {
         newGame = new Game()
         difficulty = 0
+        this.updateWins();
         this.resetGameHtml();
         newGame.player1.wins = 0;
         newGame.player2.wins = 0;
@@ -180,6 +179,7 @@ delayRestart() {
         newGame = new Game();
         newGame.resetGameHtml();
         newGame.resetGame();
+        this.updateWins();
 
     }, 15000)
     }
@@ -201,6 +201,7 @@ restartRound() {
             document.getElementById("hand").classList.remove("hidden");
         }
         this.restart();
+        this.updateWins();
     
     }, 1000);
     
@@ -259,6 +260,11 @@ computerChoice() {
 
     resetGameHtml() {
         document.getElementById("instructor-tag").innerHTML = "Choose game."
+    }
+
+    updateWins() {
+        player1Wins.innerHTML = ` ${this.player1.wins}`;
+        player2Wins.innerHTML = ` ${this.player2.wins}`;
     }
     
   }

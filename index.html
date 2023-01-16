@@ -7,10 +7,10 @@
   </head>
   <body>
     
-    <!-- video -->
     <h3>Rock:Paper:Scissors</h3>
     <h4 id ="instructor-tag">Choose game.</h4>
-    <div class="box-container">
+    <section class="game-container">
+      <section class="button-container"></section>
         <button class="button" id="classic-button"> 
             <span>Classic.</span>
         </button> 
@@ -20,40 +20,33 @@
         <button class="button" id="future-button">
             <span>Future.</span>
         </button>
-    </div>
-    <div id="main-content">
-     <div class="game-board" id="middle-board">
+      </section>  
+    <section id="main-content">
         <img class="game-background" src="/Users/joshuamartin/Desktop/png Assets/instagram frame2.png" alt="Game Board">
-     <div id="classic-Rock-Paper-Scissors">
-        <img class="rock-image hidden" id="rock" src="assets/Heart4.png" alt="rock">
-        <img class="paper-image hidden" id="paper" src="assets/Documents.png" alt="paper">
-        <img class="scissors-image hidden" id="scissors" src="assets/Close button.png" alt="scissors">
-     <div id="future-Rock-Paper-Scissors">  
-        <img class="boom-image hidden" id="boom" src="assets/Speech Bubble5.png" alt="boom">
-        <img class="hand-image hidden" id="hand" src="assets/Hand.png" alt="hand">
-    </div>
-    </div>       
-    </div>
-    <div class="sidebar-left">
-        <div id="player1-image">
-            <img class="player1-icon" src="assets/Smiley face1.png" alt="Player 1">
-          </div>
-        <h1>Player</h1>
-        <h2>Wins:</h2>
-    <div id="player-data-1" class="sidebar">
-    </div>
-    <div class="sidebar-right">
-        <div id="player2-image">
-            <img class="player2-icon" src="/Users/joshuamartin/Desktop/png Assets/Smiley face2.png" alt="Player 2">
-          </div>
-        <h1>Computer</h1>
-        <h2>Wins:</h2>
-    <div id="player-data-2" class="sidebar">
-    </div>
+    <section class="game-choices" id="classic-Rock-Paper-Scissors">
+        <img class="game-choice hidden" id="rock" src="assets/Heart4.png" alt="rock">
+        <img class="game-choice hidden" id="paper" src="assets/Documents.png" alt="paper">
+        <img class="game-choice hidden" id="scissors" src="assets/Close button.png" alt="scissors">
+    <section class="game-choices" id="future-Rock-Paper-Scissors">  
+        <img class="game-choice hidden" id="boom" src="assets/Speech bubble5.png" alt="boom">
+        <img class="game-choice hidden" id="hand" src="assets/Hand.png" alt="hand">
+    </section>
+    </section>
+    <aside class="scoreboard-container">
+        <section class="player-scoreboard" id="player1-scoreboard">
+            <img class="player-icon" src="assets/Smiley face1.png" alt="Player 1">
+            <h1>Player</h1>
+        <section id="player-data-1" class="sidebar">
+        </section>
+        <section class="player-scoreboard" id="player2-scoreboard">
+            <img class="player-icon" src="/Users/joshuamartin/Desktop/png Assets/Smiley face2.png" alt="Player 2">
+            <h1>Computer</h1>
+        <section id="player-data-2" class="sidebar">
+        </section>
+    </aside>
     <script src="./player.js"></script>
     <script src="./game.js"></script>
     <script src="scripts.js"></script>
     <link href='./styles.css' rel='stylesheet'>
   </body>
-</html>
 </html>
