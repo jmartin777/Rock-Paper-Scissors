@@ -76,6 +76,7 @@ difficultyButton.addEventListener("click", function() {
 // generates computers random choice and displays (1 second), after code block
 
 rockImage.addEventListener("click", function() {
+    console.log(event.target)
     if (newGame.player1.turn === true) {
         newGame.board[0] = 1;
         newGame.board[1] = newGame.computerChoice()
@@ -87,7 +88,8 @@ rockImage.addEventListener("click", function() {
     console.log(newGame.player1.wins);
     console.log(newGame.player2.wins);
     
-});
+    });
+
  // this gives the index position of player 1's choice of paper as a value of 2 within the index 0 of the board array.
   // this gives the index position of player 2's choice of paper as a value of 2 within the index 1 of the board array.
 
@@ -108,6 +110,7 @@ paperImage.addEventListener("click", function() {
  // this gives the index position of player 2's choice of scissors as a value of 3 within the index 1 of the board array.
 
 scissorsImage.addEventListener("click", function() {
+    console.log("fire")
     if (newGame.player1.turn === true) {
         newGame.board[0] = 3;
         newGame.board[1] = newGame.computerChoice()

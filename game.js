@@ -31,43 +31,48 @@ class Game {
 
     testWin() {
         if(this.board[0] === 1 && this.board[1] === 3) {
-            this.player1.wins++;
+        this.player1.wins++;
         } else if (this.board[0] === 2 && this.board[1] === 1) {
-            this.player1.wins++;
+        this.player1.wins++;
         } else if (this.board[0] === 3 && this.board[1] === 2) {
-            this.player1.wins++;
+        this.player1.wins++;
         } else if (this.board[0] === 1 && this.board[1] === 2) {
-            this.player2.wins++;
+        this.player2.wins++;
         } else if (this.board[0] === 2 && this.board[1] === 3) {
-            this.player2.wins++;
+        this.player2.wins++;
         } else if (this.board[0] === 3 && this.board[1] === 1) {
-            this.player2.wins++;
+        this.player2.wins++;
         } else if (this.board[0] === 4 && this.board[1] === 1) {
-            this.player1.wins++;
-        } else if (this.board[0] === 4 && this.board[1] === 2) {
-            this.player1.wins++;
-        } else if (this.board[0] === 4 && this.board[1] === 3) {
-            this.player1.wins++;
-        } else if (this.board[0] === 5 && this.board[1] === 1) {
-            this.player1.wins++;
-        } else if (this.board[0] === 5 && this.board[1] === 2) {
-            this.player1.wins++;
-        } else if (this.board[0] === 5 && this.board[1] === 3) {
-            this.player1.wins++;
-        } else if (this.board[0] === 3 && this.board[1] === 5) {
-            this.player2.wins++;
-        } else if (this.board[0] === 2 && this.board[1] === 5) {
-            this.player2.wins++;
-        } else if (this.board[0] === 1 && this.board[1] === 5) {
-            this.player2.wins++;
-        } else if (this.board[0] === 3 && this.board[1] === 4) {
-            this.player2.wins++;
-        } else if (this.board[0] === 2 && this.board[1] === 4) {
-            this.player2.wins++;
-        } else if (this.board[0] === 1 && this.board[1] === 4) {
-            this.player2.wins++;
+        this.player1.wins++;
+        } else if(this.board[0] === 4 && this.board[1] === 2) {
+        this.player1.wins++;
+        } else if(this.board[0] === 4 && this.board[1] === 3) {
+        this.player1.wins++
+        } else if(this.board[0] === 5 && this.board[1] === 3) {
+        this.player1.wins++;
+        } else if(this.board[0] === 5 && this.board[1] === 1) {
+        this.player1.wins++;
+        } else if(this.board[0] === 5 && this.board[1] === 2) {
+        this.player1.wins++;
+        } else if(this.board[0] === 1 && this.board[1] === 4) {
+        this.player2.wins++;
+        } else if(this.board[0] === 2 && this.board[1] === 4) {
+        this.player2.wins++;
+        } else if(this.board[0] === 3 && this.board[1] === 4) {
+        this.player2.wins++;
+        } else if(this.board[0] === 1 && this.board[1] === 5) {
+        this.player2.wins++;
+        } else if(this.board[0] === 2 && this.board[1] === 5) {
+        this.player2.wins++;
+        } else if(this.board[0] === 3 && this.board[1] === 5) {
+        this.player2.wins++;
         }
-
+         
+         
+         
+         
+        
+        
         if(this.board[0] === 1 && this.board[1] === 3) {
             console.log(`${this.player1.name} wins!`);
             document.getElementById("instructor-tag").innerHTML = `${this.player1.name} wins!`;
@@ -179,7 +184,7 @@ delayRestart() {
         newGame = new Game();
         newGame.resetGameHtml();
         newGame.resetGame();
-        this.updateWins();
+        newGame.updateWins();
 
     }, 15000)
     }
@@ -213,12 +218,19 @@ restartRound() {
     // sets value of this.board[1] to the computerChoice variable to be accessed.
 
 computerChoice() {
+    if (difficulty === 1) {
+    var choices = [1, 2, 3]; 
+    var randomChoice =  Math.floor(Math.random() * 3);
+    var computerChoice = choices[randomChoice];
+    this.board[1] = computerChoice;
+    } else if ( difficulty === 2) {
     var choices = [1, 2, 3, 4, 5]; 
     var randomChoice =  Math.floor(Math.random() * 5);
     var computerChoice = choices[randomChoice];
     this.board[1] = computerChoice;
-    return computerChoice
     }
+    return computerChoice
+}
 
 // displayComputerChoice assigns a (functional scope) variable and assigns the
 // value of computerChoice function ( represents the computers choice = randomized number b/t 1 and 5)
@@ -236,23 +248,21 @@ computerChoice() {
         document.getElementById("hand").classList.add("hidden");
 
 
-    if (computerChoice === 1 && newGame.difficulty === 1) {
+    if (computerChoice === 1) {
         document.getElementById("rock").classList.remove("hidden");
         } else if (computerChoice === 2) {
         document.getElementById("paper").classList.remove("hidden");
         } else if (computerChoice === 3) {
         document.getElementById("scissors").classList.remove("hidden");
-        } 
-
-    if (computerChoice === 1 && newGame.difficulty === 2 ) {
+        } else if (computerChoice === 1) {
         document.getElementById("rock").classList.remove("hidden");
-        } else if (computerChoice === 2 && newGame.difficulty === 2) {
+        } else if (computerChoice === 2 ) {
         document.getElementById("paper").classList.remove("hidden");
-        } else if (computerChoice === 3 && newGame.difficulty === 2) {
+        } else if (computerChoice === 3 ) {
         document.getElementById("scissors").classList.remove("hidden");
-        } else if (computerChoice === 4 && newGame.difficulty === 2) {
+        } else if (computerChoice === 4 ) {
         document.getElementById("boom").classList.remove("hidden");
-        } else if (computerChoice === 5 && newGame.difficulty === 2) {
+        } else if (computerChoice === 5 ) {
         document.getElementById("hand").classList.remove("hidden");
         }
     this.restartRound()
@@ -266,6 +276,8 @@ computerChoice() {
         player1Wins.innerHTML = ` ${this.player1.wins}`;
         player2Wins.innerHTML = ` ${this.player2.wins}`;
     }
+
+    
     
   }
 
