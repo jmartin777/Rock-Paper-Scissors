@@ -1,18 +1,9 @@
-// the html seems to be loading before the JS and CSS file are updating the site(im seeing DOM skeleton before page elements)
-//-solution-
-//was to set a function (setTimeout) that delays the code inside and sets the opacity to 100 on window "onload"
-// helping with the site transition on load.
-
 window.onload = function() {
     setTimeout(function(){document.body.style.opacity="100";},500);
 };
 
-//global variables
-
 var newGame = new Game();
 var difficulty = 0 
-
-//variables
 
 var difficultyButton = document.getElementById('difficulty-button')
 var classicButton = document.getElementById('classic-button') 
@@ -24,9 +15,6 @@ var boomImage = document.getElementById("boom");
 var handImage = document.getElementById("hand");
 var player1Wins = document.getElementById("player-data-1");
 var player2Wins = document.getElementById("player-data-2");
-
-
-// Event Listeners
 
 classicButton.addEventListener("click", function() {
     if (difficulty === 0) {
@@ -71,9 +59,6 @@ difficultyButton.addEventListener("click", function() {
     hideObject(rockImage);
 
 });
-// this gives the index position of player 1's choice of rock as a value of 1 within the index 0 of the board array.
-// this gives the index position of player 2's choice of rock as a value of 1 within the index 1 of the board array.
-// generates computers random choice and displays (1 second), after code block
 
 rockImage.addEventListener("click", function() {
     console.log(event.target)
@@ -88,10 +73,7 @@ rockImage.addEventListener("click", function() {
     console.log(newGame.player1.wins);
     console.log(newGame.player2.wins);
     
-    });
-
- // this gives the index position of player 1's choice of paper as a value of 2 within the index 0 of the board array.
-  // this gives the index position of player 2's choice of paper as a value of 2 within the index 1 of the board array.
+});
 
 paperImage.addEventListener("click", function() {
     if (newGame.player1.turn === true) {
@@ -104,10 +86,7 @@ paperImage.addEventListener("click", function() {
     newGame.testWinMode()
     console.log(newGame.player1.wins);
     console.log(newGame.player2.wins);
-    
 });
- // this gives the index position of player 1's choice of scissors as a value of 3 within the index 0 of the board array.
- // this gives the index position of player 2's choice of scissors as a value of 3 within the index 1 of the board array.
 
 scissorsImage.addEventListener("click", function() {
     console.log("fire")
@@ -123,8 +102,6 @@ scissorsImage.addEventListener("click", function() {
         console.log(newGame.player2.wins);
     
 });
-// this gives the index position of player 1's choice of boom as a value of 4 within the index 0 of the board array.
-// this gives the index position of player 2's choice of boom as a value of 4 within the index 1 of the board array.
 
 boomImage.addEventListener("click", function() {
     if (newGame.player1.turn === true) {
@@ -139,8 +116,6 @@ boomImage.addEventListener("click", function() {
         console.log(newGame.player2.wins);
    
 });
- // this gives the index position of player 1's choice of hand as a value of 5 within the index 0 of the board array.
- // this gives the index position of player 2's choice of hand as a value of 5 within the index 1 of the board array.
 
 handImage.addEventListener("click", function() {
     if (newGame.player1.turn === true) {
@@ -155,16 +130,11 @@ handImage.addEventListener("click", function() {
         console.log(newGame.player2.wins);
 });
 
-// Event Handelers
-
-        // function [reveals] the object
-
 function revealObject(object) {
     if (object.classList.contains("hidden")) {
       object.classList.remove("hidden");
     } 
 }
-        // function [hides] the object
 
 function hideObject(object) {
     object.classList.add("hidden");

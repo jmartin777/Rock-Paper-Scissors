@@ -1,17 +1,14 @@
-    html {
+  html {
     background-color: aquamarine;
   }
-
-  body  {
+    body  {
     opacity:0;
   }
-
   #main-content {
     display: grid;
     height: 100vh;
     justify-content: center;
- }
-  
+  }
   .game-background {
     height: 520px;
     width: 890px;
@@ -20,39 +17,33 @@
     padding: 3%;
     margin-left: -10%;
   }
-
   .game-container{
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
-    margin-left: -35%;
- }
-
- .scoreboard-container {
+    margin-left: -35%;  
+  }
+  .scoreboard-container {
   display:flex;
   margin-top: -35%;
- }
-
- .player-scoreboard {
+  }
+  .player-scoreboard {
   display: flex;
   align-items: baseline;
   margin: 6%;
- }
-
- #player1-scoreboard {
+  }
+  #player1-scoreboard {
   display: flex;
   justify-content: left;
   margin-left: -36%;
   flex-direction: row;
- }
-
- #player2-scoreboard {
+  }
+  #player2-scoreboard {
   display: flex;
   align-items: baseline;
   flex-direction: row;
   margin-left: 260%;
- }
-
+  }
   .button {
     width: 120px;
     height: 55px;
@@ -61,125 +52,100 @@
     margin-left: -40px;
     cursor: pointer;
   }
-
   #difficulty-button {
     margin-right: 7%;
   }
-
   .button:active {
     background-color: aquamarine;
   }
-  
   .active {
     background-color: aquamarine;
   }
-
-   span {
-    color: white;
-    font-family: monospace;
-    font-size: 15px;
-    padding: 5px;
-  }
-
-
   .player-icon {
     height: 100px;
     width: 100px;
   }
-
   .player2-icon{
     height: 100px;
     width: 100px;
   }
-
   #classic-Rock-Paper-Scissors {
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
-    margin-top: -65%;
+    margin-top: -72%;
     margin-left: 3%;
     cursor: pointer;
-}
-
-#future-Rock-Paper-Scissors {
+  }
+  #future-Rock-Paper-Scissors {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin-left: -3px;
     margin-bottom: 17%;
-}
-
+  }
   #rock {
     height: 150px;
     cursor: pointer;
     margin-top: 15%;
   }
-
   #paper {
     height: 150px;
     margin-right: 85px;
     cursor: pointer;
   }
-
   #scissors {
     height: 150px;
     margin-left: -30px;
     padding-top: 10%;
     cursor: pointer;
   }
-
   #boom {
     height: 150px;
     cursor: pointer;
     margin-top: -122%;
-
   }
-
   #hand {
     height: 150px;
     cursor: pointer;
-    margin-top: 20%;
   }
-  
-  #player1, #player2 {
+   #player1, #player2 {
     border: 1px solid black;
     padding: 5px;
   }
-
   .sidebar {
     margin-top: 1%;
     font-size: 20px;
     font-family: monospace;
-    ;
   }
-  
+  span {
+    color: white;
+    font-family: monospace;
+    font-size: 15px;
+    padding: 5px;
+  }
   h1 {
     display: flex;
     flex-direction: column;
     font-size: 20px;
   }
-
-
   h3 {
     display: flex;
     justify-content: center;
     font-size: 40px;
     margin-left: -45px;
   }
-
   h4 {
     display: flex;
     justify-content: center;
     margin-left: -35px;
     font-size: 20px;
   }
-
   h1 , h2, h3, h4 {
     font-family: monospace;
     padding: 10px
   }
-  
   .hidden {
     display: none;
   }
