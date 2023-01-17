@@ -13,6 +13,8 @@ Open up the terminal and paste the SSH code after typing git clone in the termin
 ### Preview of App:
 [//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
 
+![Screen Shot 2023-01-17 at 3 30 45 PM](https://user-images.githubusercontent.com/76410246/213026764-6e4b2790-0da3-435a-b136-381bc3e65150.png)
+
 ### Context:
 [//]: <> (Give some context for the project here. How long did you have to work on it? How far into the Turing program are you?)
 
@@ -32,5 +34,3 @@ The main learning goals of this project for me was to understand how to create a
 [//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
 
 Understanding how to use JavaScript events to create a simple game using the Rock-Paper-Scissors logic. And to handle user interactions that update the game state. I felt using the HTML CSS and Javascript togehtor from the ground up in this application was a huge win for me. Another aspect of the project was creating different class levels as a "difficulty" global variable which was a huge marker for me in organazation and understanding diffirent Logic states I was running depending on the event delegation process. This really allowed me to lean into understanding how to use classes and objects in JavaScript to organize and structure code with the many methods you can weave into one another to create new logic within a data model. Some challenges for me was in the writing/debugging process of the logical input that decides the diffrernt outcomes of a win from either a player or a computer.I faced where the wins were not being updated in the data model but yet i was seeing the physical manipulation of the UI announcing wins.. So i decided to seperate them into two different 'if' statements and test the logic from there (adding more lines of code) to see if my logic was working. In also finding a solution to this I created a function that restarts the turn and updates the model for wins to be updated . To avail! I was able to see the outcomes I was expecting after breaking my code once or twice after that! I really want to emphasize the lightbulb moments I had working on this project and really seeing mod1 in motion for me. Creating a data model and the functionality (using helper functions within everything) and global variables to help with the modes in which you can use as direction within your functionality really made me think differently.
-        
-       
